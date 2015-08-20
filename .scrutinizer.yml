@@ -1,0 +1,17 @@
+checks:
+    php: true
+
+filter:
+    excluded_paths:
+        - tests/*
+        - vendor/*
+        - bin/*
+
+build:
+    tests:
+        override:
+            -
+                command: 'bin/phpunit --coverage-clover=cover'
+                coverage:
+                    file: 'cover'
+                    format: 'php-clover'

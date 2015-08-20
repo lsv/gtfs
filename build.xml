@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Lsv \ Gtfs" default="dist">
+
+    <property name="title" value="${phing.project.name}" />
+
+    <property name="rootdir" value="." />
+    <property name="bindir" value="${rootdir}/bin" />
+    <property name="srcdir" value="${rootdir}/src" />
+    <property name="builddir" value="${rootdir}/.build" />
+    <property name="docsdir" value="${rootdir}/.build/docs" />
+
+    <property name="BUILD_FAIL" value="false" />
+    <fileset dir="${srcdir}" id="src_fileset">
+        <include name="**/*.php" />
+    </fileset>
+    <fileset dir="./docs" id="docs_fileset">
+        <include name="******" />
+        <exclude name=".git" />
+    </fileset>
+
+    <!-- ============================================  -->
+    <!-- Target: prepare                               -->
+    <!-- ============================================  -->
+    <target name="prepare">
+        <delete dir="${builddir}" />
+        <mkdir dir="${builddir}" />
+        <mkdir dir="${docsdir}" />
+        <mkdir dir="${docsdir}/api" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- PHP CS Fixer (php-cs-fixer)                   -->
+    <!-- ============================================  -->
+    <target name="phpcsfixer">
+        <exec command="${bindir}/php-cs-fixer fix ${srcdir} --level=psr2" />
+        <exec command="${bindir}/phpcbf --standard=PSR2 ${srcdir}" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- PHP_CodeSniffer (phpcs)                       -->
+    <!-- PHP MD (phpmd)                                -->
+    <!-- PHP CPD (phpcpf)                              -->
+    <!-- ============================================  -->
+    <target name="phpmessdetector">
+        <exec command="${bindir}/phpcs --standard=PSR2 ${srcdir} --report-file=${builddir}/phpcs.log" />
+        <exec command="${bindir}/phpmd ${srcdir} text ${rootdir}/.phpmd.xml --reportfile=${builddir}/phpmd.log" />
+        <exec command="${bindir}/phpcpd ${srcdir} --log-pmd=${builddir}/phpcpd.log" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- PHP Size (phploc)                             -->
+    <!-- ============================================  -->
+    <target name="phploc" description="Measures and logs the size of the project">
+        <phploc reportType="txt" reportName="phploc" reportDirectory="${builddir}" countTests="false">
+            <fileset refid="src_fileset" />
+        </phploc>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- PHP Documentor 2 (phpdoc)                     -->
+    <!-- ============================================  -->
+    <target name="phpdoc">
+        <phpdoc2 title="${title}" destdir="${docsdir}/api" template="responsive-twig" defaultPackageName="${title}">
+            <fileset refid="src_fileset" />
+        </phpdoc2>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Unit tests (phpunit)                          -->
+    <!-- ============================================  -->
+    <target name="phpunit">
+        <exec command="${bindir}/phpunit -c ${rootdir}" logoutput="true" checkreturn="true" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: build                                 -->
+    <!-- ============================================  -->
+    <target name="build" depends="prepare, phpcsfixer, phpmessdetector, phploc, phpdoc, phpunit" />
+
+    <!-- ============================================  -->
+    <!-- (DEFAULT)  Target: dist                       -->
+    <!-- ============================================  -->
+    <target name="dist" depends="build">
+        <!--
+        <propertyprompt promptText="Git commit message" propertyName="gitcommitmessage" />
+        <exec command="git add . -A" dir="${rootdir}" checkreturn="false" />
+        <exec command="git commit -m '${gitcommitmessage}'" dir="${rootdir}" checkreturn="false" />
+        <exec command="git push" dir="${rootdir}" checkreturn="false" />
+        <exec command="git add . -A" dir="${srcdir}/Resources/docs" checkreturn="false" />
+        <exec command="git commit -m '${gitcommitmessage}'" dir="${srcdir}/Resources/docs" checkreturn="false" />
+        <exec command="git push" dir="${srcdir}/Resources/docs" checkreturn="false" />
+        -->
+    </target>
+</project>
