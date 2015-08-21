@@ -7,7 +7,7 @@
     <property name="bindir" value="${rootdir}/bin" />
     <property name="srcdir" value="${rootdir}/src" />
     <property name="builddir" value="${rootdir}/.build" />
-    <property name="docsdir" value="${rootdir}/.build/docs" />
+    <property name="docsdir" value="${builddir}/docs" />
 
     <property name="BUILD_FAIL" value="false" />
     <fileset dir="${srcdir}" id="src_fileset">
@@ -25,7 +25,6 @@
         <delete dir="${builddir}" />
         <mkdir dir="${builddir}" />
         <mkdir dir="${docsdir}" />
-        <mkdir dir="${docsdir}/api" />
     </target>
 
     <!-- ============================================  -->
@@ -66,6 +65,13 @@
     </target>
 
     <!-- ============================================  -->
+    <!-- Apigen (agigen)                               -->
+    <!-- ============================================  -->
+    <target name="apigen">
+        <exec command="${bindir}/apigen generate -s ${srcdir} -d ${docsdir} --tree --todo --title='Lsv \ GTFS' --template-theme=bootstrap" logoutput="true" checkreturn="true" />
+    </target>
+
+    <!-- ============================================  -->
     <!-- Unit tests (phpunit)                          -->
     <!-- ============================================  -->
     <target name="phpunit">
@@ -75,7 +81,7 @@
     <!-- ============================================  -->
     <!-- Target: build                                 -->
     <!-- ============================================  -->
-    <target name="build" depends="prepare, phpcsfixer, phpmessdetector, phploc, phpdoc, phpunit" />
+    <target name="build" depends="prepare, phpcsfixer, phpmessdetector, phploc, apigen, phpunit" />
 
     <!-- ============================================  -->
     <!-- (DEFAULT)  Target: dist                       -->
