@@ -33,6 +33,12 @@ class Trip
     protected $route;
 
     /**
+     * @todo Make this
+     * @var
+     */
+    protected $service;
+
+    /**
      * This field contains an ID that uniquely identifies a set of dates when service is available for one or more routes.
      * This value is referenced from the Calendar object.
      *

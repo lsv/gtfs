@@ -15,7 +15,7 @@ use JMS\Serializer\Annotation as JMS;
 class Route
 {
     /**
-     * The route_id field contains an ID that uniquely identifies a route. The route_id is dataset unique.
+     * This field contains an ID that uniquely identifies a route. The route_id is dataset unique.
      *
      * @var string
      * @JMS\Type("string")
@@ -24,7 +24,7 @@ class Route
     protected $id;
 
     /**
-     * The agency_id field defines an agency for the specified route. This value is referenced from the agency.
+     * This field defines an agency for the specified route. This value is referenced from the Agency model.
      * Use this field when you are providing data for routes from more than one agency.
      *
      * @JMS\Type("Agency")
