@@ -1,13 +1,13 @@
 <?php
 
-namespace Lsv\Gtfs\Entity;
+namespace Lsv\Gtfs\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Class Agency
- * @package Lsv\Gtfs\Entity
+ * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#agencytxt
  *
  * @JMS\XmlRoot(name="agency")

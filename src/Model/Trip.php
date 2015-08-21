@@ -1,6 +1,6 @@
 <?php
 
-namespace Lsv\Gtfs\Entity;
+namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
 

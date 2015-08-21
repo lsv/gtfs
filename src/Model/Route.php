@@ -1,13 +1,13 @@
 <?php
 
-namespace Lsv\Gtfs\Entity;
+namespace Lsv\Gtfs\Model;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Class Route
- * @package Lsv\Gtfs\Entity
+ * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#routestxt
  *
  * @JMS\XmlRoot(name="routes")
