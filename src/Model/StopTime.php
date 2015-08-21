@@ -14,15 +14,13 @@ use JMS\Serializer\Annotation as JMS;
  */
 class StopTime
 {
-
     /**
      * This field contains an ID that identifies a trip.
      * This value is referenced from a Trip object.
      *
-     * @var Trip
-     * @JMS\Type("Trip")
+     * @var string
+     * @JMS\Type("string")
      * @JMS\SerializedName(name="trip_id")
-     *
      */
     protected $trip;
 
@@ -35,10 +33,9 @@ class StopTime
      * In other words, stop A with stop_id 1 should have stop_id 1 in all subsequent data updates.
      * If a stop is not a time point, enter blank values for arrival_time and departure_time.
      *
-     * @var Stop
-     * @JMS\Type("Stop")
+     * @var string
+     * @JMS\Type("string")
      * @JMS\SerializedName(name="stop_id")
-     *
      */
     protected $stop;
 
@@ -58,10 +55,10 @@ class StopTime
      * The following columns list stop times for a trip and the proper way to express those times in the arrival_time field:
      *
      * Becomes          You write
-     * 08:10:00 A.M.	08:10:00 or 8:10:00
-     * 01:05:00 P.M.	13:05:00
-     * 07:40:00 P.M.	19:40:00
-     * 01:55:00 A.M.	25:55:00
+     * 08:10:00 A.M.    08:10:00 or 8:10:00
+     * 01:05:00 P.M.    13:05:00
+     * 07:40:00 P.M.    19:40:00
+     * 01:55:00 A.M.    25:55:00
      *
      * Note: Trips that span multiple dates will have stop times greater than 24:00:00
      * For example, if a trip begins at 10:30:00 p.m. and ends at 2:15:00 a.m. on the following day,
@@ -176,5 +173,4 @@ class StopTime
      * @JMS\SerializedName("timepoint")
      */
     protected $timepoint = null;
-
 }

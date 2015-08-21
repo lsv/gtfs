@@ -8,7 +8,7 @@ use JMS\Serializer\Annotation as JMS;
  * Trips for each route. A trip is a sequence of two or more stops that occurs at specific time.
  * Required
  *
- * @package GTFS\Entity
+ * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#tripstxt
  *
  * @JMS\XmlRoot(name="trips")
@@ -28,27 +28,21 @@ class Trip
      * This field contains an ID that uniquely identifies a route.
      * This value is referenced from the Route object.
      *
-     * @var Route
-     * @JMS\Type("Route")
+     * @var string
+     * @JMS\Type("string")
      * @JMS\SerializedName(name="route_id")
      */
     protected $route;
 
     /**
-     * @todo Make this
-     * @var
+     * The service_id contains an ID that uniquely identifies a set of dates when service is available for one or more routes.
+     * This value is referenced from the Calendar and CalendarDate models.
+     *
+     * @var string
+     * @JMS\Type("string")
+     * @JMS\SerializedName("service_id")
      */
     protected $service;
-
-    /**
-     * This field contains an ID that uniquely identifies a set of dates when service is available for one or more routes.
-     * This value is referenced from the Calendar object.
-     *
-     * @var Calendar
-     * @JMS\Type("Calendar")
-     * @JMS\SerializedName(name="service_id")
-     */
-    protected $calendar;
 
     /**
      * The headsign field contains the text that appears on a sign that identifies the trip's destination to passengers.
@@ -99,8 +93,8 @@ class Trip
      * The shape field contains an ID that defines a shape for the trip.
      * This value is referenced from a Shape.
      *
-     * @var Shape
-     * @JMS\Type("Shape")
+     * @var string
+     * @JMS\Type("string")
      * @JMS\SerializedName("shape_id")
      */
     protected $shape;

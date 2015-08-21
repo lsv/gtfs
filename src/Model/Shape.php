@@ -14,7 +14,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class Shape
 {
-
     /**
      * This field contains an ID that uniquely identifies a shape.
      *
@@ -65,5 +64,4 @@ class Shape
      * @JMS\SerializedName("shape_dist_traveled")
      */
     protected $traveled = null;
-
 }

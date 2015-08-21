@@ -15,7 +15,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class Calendar
 {
-
     /**
      * This contains an ID that uniquely identifies a set of dates when service is available for one or more routes.
      * Each value can appear at most once in all Calendar models. This value is dataset unique. It is referenced by Trip model
@@ -120,5 +119,4 @@ class Calendar
      * @JMS\SerializedName("end_date")
      */
     protected $end;
-
 }

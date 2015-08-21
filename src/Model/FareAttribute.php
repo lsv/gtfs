@@ -14,7 +14,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class FareAttribute
 {
-
     /**
      * This field contains an ID that uniquely identifies a fare class. The fare_id is dataset unique.
      *
@@ -80,5 +79,4 @@ class FareAttribute
      * @JMS\SerializedName("transfer_duration")
      */
     protected $transfer_duration;
-
 }

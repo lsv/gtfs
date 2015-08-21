@@ -29,7 +29,7 @@ class Route
      * This field defines an agency for the specified route. This value is referenced from the Agency model.
      * Use this field when you are providing data for routes from more than one agency.
      *
-     * @JMS\Type("Agency")
+     * @JMS\Type("string")
      * @JMS\SerializedName(name="agency_id")
      */
     protected $agency;
@@ -118,11 +118,4 @@ class Route
      * @JMS\SerializedName(name="route_text_color")
      */
     protected $text_color = '000000';
-
-    /**
-     * @var Trip[]|ArrayCollection
-     * @JMS\Type("ArrayCollection<Trip>")
-     * @JMS\SerializedName(name="trips")
-     */
-    protected $trips;
 }

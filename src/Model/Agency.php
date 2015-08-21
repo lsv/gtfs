@@ -94,11 +94,4 @@ class Agency
      * @JMS\SerializedName(name="agency_fare_url")
      */
     protected $fare_url = null;
-
-    /**
-     * @var Route[]|ArrayCollection
-     * @JMS\Type("ArrayCollection<Route>")
-     * @JMS\SerializedName(name="routes")
-     */
-    protected $routes;
 }

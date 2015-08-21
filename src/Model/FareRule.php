@@ -20,7 +20,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class FareRule
 {
-
     /**
      * This field contains an ID that uniquely identifies a fare class.
      * This value is referenced from the FareAttribute model.
@@ -88,5 +87,4 @@ class FareRule
      * @JMS\SerializedName("contains_id")
      */
     protected $contains_id = null;
-
 }

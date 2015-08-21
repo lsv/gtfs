@@ -18,7 +18,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class FeedInfo
 {
-
     /**
      * This field contains the full name of the organization that publishes the feed.
      * (This may be the same as one of the agency_name values in a Agency object)
@@ -85,5 +84,4 @@ class FeedInfo
      * @JMS\SerializedName("feed_version")
      */
     protected $version = null;
-
 }

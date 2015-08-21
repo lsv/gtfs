@@ -17,7 +17,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class Frequency
 {
-
     /**
      * This contains an ID that identifies a trip on which the specified frequency of service applies.
      * Trip IDs are referenced from the Trip model.
@@ -81,5 +80,4 @@ class Frequency
      * @JMS\SerializedName("exact_times")
      */
     protected $exact_times = '';
-
 }

@@ -16,7 +16,6 @@ use JMS\Serializer\Annotation as JMS;
  */
 class Transfer
 {
-
     /**
      * This field contains a stop ID that identifies a stop or station where a connection between routes begins.
      * Stop IDs are referenced from the a Stop model.
@@ -64,5 +63,4 @@ class Transfer
      * @JMS\SerializedName("min_transfer_time")
      */
     protected $time;
-
 }

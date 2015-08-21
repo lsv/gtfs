@@ -84,8 +84,8 @@ class Stop
      * Zone IDs are required if you want to provide fare information using fareRules
      * If this stop ID represents a station, the zone ID is ignored.
      *
-     * @var FareRule
-     * @JMS\Type("FareRule")
+     * @var string
+     * @JMS\Type("string")
      * @JMS\SerializedName(name="zone_id")
      */
     protected $zone = null;
@@ -120,8 +120,8 @@ class Stop
      * this field identifies the station associated with the stop.
      * To use this field, a stop must also contain a row where this stop ID is assigned location type=1.
      *
-     * @var Stop
-     * @JMS\Type("Stop")
+     * @var string
+     * @JMS\Type("string")
      * @JMS\SerializedName(name="parent_station")
      */
     protected $parent;
