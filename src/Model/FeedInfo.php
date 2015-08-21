@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
@@ -9,9 +17,8 @@ use JMS\Serializer\Annotation as JMS;
  * GTFS currently has an Agency model to provide information about the agencies that operate the services described by the feed.
  * However, the publisher of the feed is sometimes a different entity than any of the agencies (in the case of regional aggregators).
  * In addition, there are some fields that are really feed-wide settings, rather than agency-wide.
- * Optional
+ * Optional.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#feed_infotxt
  *
  * @JMS\XmlRoot("feed_info")
@@ -31,7 +38,7 @@ class FeedInfo
 
     /**
      * This field contains the URL of the feed publishing organization's website.
-     * (This may be the same as one of the agency_url values in a Agency object)
+     * (This may be the same as one of the agency_url values in a Agency object).
      *
      * @var string
      * @JMS\Type("string")

@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
@@ -9,9 +17,8 @@ use JMS\Serializer\Annotation as JMS;
  * If your service is generally regular, with a few changes on explicit dates (for example, to accomodate special event services, or a school schedule), this is a good approach.
  * Alternate: Omit Calendar model, and include ALL dates of service in this.
  * If your schedule varies most days of the month, or you want to programmatically output service dates without specifying a normal weekly schedule, this approach may be preferable.
- * Optional
+ * Optional.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#calendar_datestxt
  *
  * @JMS\XmlRoot("calendar_dates")
@@ -20,7 +27,7 @@ class CalendarDate
 {
     /**
      * This contains an ID that uniquely identifies a set of dates when service is available for one or more routes.
-     * Each value can appear at most once in all Calendar models. This value is dataset unique. It is referenced by Trip model
+     * Each value can appear at most once in all Calendar models. This value is dataset unique. It is referenced by Trip model.
      *
      * @var string
      * @JMS\Type("string")

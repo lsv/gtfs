@@ -1,13 +1,20 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Times that a vehicle arrives at and departs from individual stops for each trip.
- * Required
+ * Required.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#stop_timestxt
  *
  * @JMS\XmlRoot("stop_times")
@@ -73,6 +80,7 @@ class StopTime
 
     /**
      * This field specifies the departure time from a specific stop for a specific trip on a route.
+     *
      * @see Stop::ArrivalTime for more documentation
      *
      * @var string
@@ -111,7 +119,7 @@ class StopTime
      * 0 - Regularly scheduled pickup
      * 1 - No pickup available
      * 2 - Must phone agency to arrange pickup
-     * 3 - Must coordinate with driver to arrange pickup
+     * 3 - Must coordinate with driver to arrange pickup.
      *
      * @var int
      * @JMS\Type("integer")
@@ -126,7 +134,7 @@ class StopTime
      * 0 - Regularly scheduled drop off
      * 1 - No drop off available
      * 2 - Must phone agency to arrange drop off
-     * 3 - Must coordinate with driver to arrange drop off
+     * 3 - Must coordinate with driver to arrange drop off.
      *
      * @var int
      * @JMS\Type("integer")

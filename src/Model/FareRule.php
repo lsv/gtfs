@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
@@ -6,14 +14,13 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Rules for applying fare information for a transit organization's routes.
  * This model allows you to specify how fares in FareAttribute model txt apply to an itinerary.
- * Most fare structures use some combination of the following rules:
+ * Most fare structures use some combination of the following rules:.
  *
  * Fare depends on origin or destination stations.
  * Fare depends on which zones the itinerary passes through.
  * Fare depends on which route the itinerary uses.
  * Optional
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#fare_rulestxt
  *
  * @JMS\XmlRoot("fare_rules")
@@ -35,7 +42,7 @@ class FareRule
      * If you have several routes with the same fare attributes, create a new FareRule for each route.
      * For example, if fare class "b" is valid on route "TSW" and "TSE", this model would contain these rows for the fare class:
      * b,TSW
-     * b,TSE
+     * b,TSE.
      *
      * @var string
      * @JMS\Type("string")
@@ -47,7 +54,7 @@ class FareRule
      * This field associates the fare ID with an origin zone ID. Zone IDs are referenced from in a Stop model.
      * If you have several origin IDs with the same fare attributes, create a new FareRule for each origin ID.
      * For example, if fare class "b" is valid for all travel originating from either zone "2" or zone "8",
-     * this model would contain these rows for the fare class:
+     * this model would contain these rows for the fare class:.
      *
      * b, , 2
      * b, , 8
@@ -64,7 +71,7 @@ class FareRule
      * For example, you could use the zone_ID and destination_ID fields together to specify that fare class "b" is valid for travel between zones 3 and 4,
      * and for travel between zones 3 and 5, the FareRule model would contain these rows for the fare class:
      * b, , 3,4
-     * b, , 3,5
+     * b, , 3,5.
      *
      * @var string
      * @JMS\Type("string")

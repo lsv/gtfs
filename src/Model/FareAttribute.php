@@ -1,13 +1,20 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Fare information for a transit organization's routes.
- * Optional
+ * Optional.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#fare_attributestxt
  *
  * @JMS\XmlRoot("fare_attributes")
@@ -34,7 +41,8 @@ class FareAttribute
 
     /**
      * This field defines the currency used to pay the fare.
-     * Please use the ISO 4217 alphabetical currency codes (3 letter currency name code)
+     * Please use the ISO 4217 alphabetical currency codes (3 letter currency name code).
+     *
      * @see http://en.wikipedia.org/wiki/ISO_4217
      *
      * @var string
@@ -56,7 +64,7 @@ class FareAttribute
 
     /**
      * The transfers field specifies the number of transfers permitted on this fare.
-     * Valid values for this field are:
+     * Valid values for this field are:.
      *
      * 0 - No transfers permitted on this fare.
      * 1 - Passenger may transfer once.
