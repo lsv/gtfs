@@ -6,7 +6,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Agency
+ * One or more transit agencies that provide the data in this feed.
+ * Required
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#agencytxt
  *

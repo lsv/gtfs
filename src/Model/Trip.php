@@ -5,7 +5,9 @@ namespace Lsv\Gtfs\Model;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Trip
+ * Trips for each route. A trip is a sequence of two or more stops that occurs at specific time.
+ * Required
+ *
  * @package GTFS\Entity
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#tripstxt
  *

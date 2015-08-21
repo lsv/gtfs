@@ -4,7 +4,13 @@ namespace Lsv\Gtfs\Model;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class CalendarDate
+ * This table allows you to explicitly activate or disable service IDs by date. You can use it in two ways.
+ * Recommended: Use this in conjunction with a Calendar model, where this defines any exceptions to the default service categories defined in a Calendar model.
+ * If your service is generally regular, with a few changes on explicit dates (for example, to accomodate special event services, or a school schedule), this is a good approach.
+ * Alternate: Omit Calendar model, and include ALL dates of service in this.
+ * If your schedule varies most days of the month, or you want to programmatically output service dates without specifying a normal weekly schedule, this approach may be preferable.
+ * Optional
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#calendar_datestxt
  *

@@ -4,7 +4,10 @@ namespace Lsv\Gtfs\Model;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Calendar
+ * Dates for service IDs using a weekly schedule.
+ * Specify when service starts and ends, as well as days of the week where service is available.
+ * Required
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#calendartxt
  *

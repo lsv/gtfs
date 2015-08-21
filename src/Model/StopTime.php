@@ -4,7 +4,9 @@ namespace Lsv\Gtfs\Model;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class StopTime
+ * Times that a vehicle arrives at and departs from individual stops for each trip.
+ * Required
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#stop_timestxt
  *

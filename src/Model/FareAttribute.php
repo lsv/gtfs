@@ -4,7 +4,9 @@ namespace Lsv\Gtfs\Model;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class FareAttribute
+ * Fare information for a transit organization's routes.
+ * Optional
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#fare_attributestxt
  *

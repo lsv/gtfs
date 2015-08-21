@@ -6,7 +6,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Route
+ * Transit routes. A route is a group of trips that are displayed to riders as a single service.
+ * Required
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#routestxt
  *

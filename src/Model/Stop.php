@@ -4,7 +4,9 @@ namespace Lsv\Gtfs\Model;
 use JMS\Serializer\Annotation as JMS;
 
 /**
- * Class Stop
+ * Individual locations where vehicles pick up or drop off passengers.
+ * Required
+ *
  * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#stopstxt
  *
