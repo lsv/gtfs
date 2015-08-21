@@ -1,14 +1,20 @@
 <?php
 
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Trips for each route. A trip is a sequence of two or more stops that occurs at specific time.
- * Required
+ * Required.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#tripstxt
  *
  * @JMS\XmlRoot(name="trips")
@@ -85,7 +91,7 @@ class Trip
     protected $direction;
 
     /**
-     * Not supported yet
+     * Not supported yet.
      */
     protected $block;
 
@@ -102,7 +108,7 @@ class Trip
     /**
      * 0 (or empty) - indicates that there is no accessibility information for the trip
      * 1 - indicates that the vehicle being used on this particular trip can accommodate at least one rider in a wheelchair
-     * 2 - indicates that no riders in wheelchairs can be accommodated
+     * 2 - indicates that no riders in wheelchairs can be accommodated.
      *
      * @var int
      * @JMS\Type("integer")
@@ -113,7 +119,7 @@ class Trip
     /**
      * 0 (or empty) - indicates that there is no bike information for the trip
      * 1 - indicates that the vehicle being used on this particular trip can accommodate at least one bicycle
-     * 2 - indicates that no bicycles are allowed on this trip
+     * 2 - indicates that no bicycles are allowed on this trip.
      *
      * @var int
      * @JMS\Type("integer")

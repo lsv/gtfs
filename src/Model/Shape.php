@@ -1,13 +1,20 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Rules for drawing lines on a map to represent a transit organization's routes.
- * Optional
+ * Optional.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#shapestxt
  *
  * @JMS\XmlRoot("shapes")
@@ -47,7 +54,7 @@ class Shape
      * This field associates the latitude and longitude of a shape point with its sequence order along the shape.
      * The values for sequence must be non-negative integers, and they must increase along the trip.
      *
-     * @var integer
+     * @var int
      * @JMS\Type("integer")
      * @JMS\SerializedName("shape_pt_sequence")
      */

@@ -1,15 +1,20 @@
 <?php
 
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * One or more transit agencies that provide the data in this feed.
- * Required
+ * Required.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#agencytxt
  *
  * @JMS\XmlRoot(name="agency")

@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
@@ -6,9 +14,8 @@ use JMS\Serializer\Annotation as JMS;
 /**
  * Dates for service IDs using a weekly schedule.
  * Specify when service starts and ends, as well as days of the week where service is available.
- * Required
+ * Required.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#calendartxt
  *
  * @JMS\XmlRoot("calendar")
@@ -17,7 +24,7 @@ class Calendar
 {
     /**
      * This contains an ID that uniquely identifies a set of dates when service is available for one or more routes.
-     * Each value can appear at most once in all Calendar models. This value is dataset unique. It is referenced by Trip model
+     * Each value can appear at most once in all Calendar models. This value is dataset unique. It is referenced by Trip model.
      *
      * @var string
      * @JMS\Type("string")
@@ -28,7 +35,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")
@@ -39,7 +46,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")
@@ -50,7 +57,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")
@@ -61,7 +68,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")
@@ -72,7 +79,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")
@@ -83,7 +90,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")
@@ -94,7 +101,7 @@ class Calendar
     /**
      * This field contains boolean value that indicates whether the service is valid.
      * A value of true indicates that service is available
-     * A value of false indicates that service is not available
+     * A value of false indicates that service is not available.
      *
      * @var bool
      * @JMS\Type("boolean")

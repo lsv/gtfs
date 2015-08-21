@@ -1,13 +1,20 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Individual locations where vehicles pick up or drop off passengers.
- * Required
+ * Required.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#stopstxt
  *
  * @JMS\XmlRoot("stops")
@@ -104,12 +111,12 @@ class Stop
      * This field identifies whether this stop ID represents a stop or station.
      * If no location type is specified, or the location_type is blank, stop IDs are treated as stops.
      * Stations may have different properties from stops when they are represented on a map or used in trip planning.
-     * The location type field can have the following values:
+     * The location type field can have the following values:.
      *
      * 0 or blank - Stop. A location where passengers board or disembark from a transit vehicle.
      * 1 - Station. A physical structure or area that contains one or more stop.
      *
-     * @var integer
+     * @var int
      * @JMS\Type("integer")
      * @JMS\SerializedName(name="location_type")
      */
@@ -144,7 +151,7 @@ class Stop
 
     /**
      * The wheelchair_boarding field identifies whether wheelchair boardings are possible from the specified stop or station.
-     * The field can have the following values:
+     * The field can have the following values:.
      *
      * 0 (or empty) - indicates that there is no accessibility information for the stop
      * 1 - indicates that at least some vehicles at this stop can be boarded by a rider in a wheelchair

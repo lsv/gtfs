@@ -1,4 +1,12 @@
 <?php
+
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
 use JMS\Serializer\Annotation as JMS;
@@ -8,9 +16,8 @@ use JMS\Serializer\Annotation as JMS;
  * This model is intended to represent schedules that don't have a fixed list of stop times.
  * When trips are defined in this model, the trip planner ignores the absolute values of the arrival_time and departure_time fields for those trips in a StopTime model.
  * Instead, the StopTime model defines the sequence of stops and the time difference between each stop.
- * Optional
+ * Optional.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#frequenciestxt
  *
  * @JMS\XmlRoot("frequencies")
@@ -54,7 +61,7 @@ class Frequency
      * during the time interval specified by startTime and endTime. The headway value must be entered in seconds.
      * Periods in which headways are defined (the rows in this model) shouldn't overlap for the same trip,
      * since it's hard to determine what should be inferred from two overlapping headways.
-     * However, a headway period may begin at the exact same time that another one ends, for instance:
+     * However, a headway period may begin at the exact same time that another one ends, for instance:.
      *
      * A, 05:00:00, 07:00:00, 600
      * B, 07:00:00, 12:00:00, 1200

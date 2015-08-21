@@ -1,15 +1,20 @@
 <?php
 
+/*
+ * (c) Martin Aarhof <martin.aarhof@gmail.com>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
 namespace Lsv\Gtfs\Model;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use JMS\Serializer\Annotation as JMS;
 
 /**
  * Transit routes. A route is a group of trips that are displayed to riders as a single service.
- * Required
+ * Required.
  *
- * @package Lsv\Gtfs\Model
  * @example https://developers.google.com/transit/gtfs/reference?hl=en#routestxt
  *
  * @JMS\XmlRoot(name="routes")
@@ -65,7 +70,7 @@ class Route
      * Do not simply duplicate the name of the route. For example,
      * "A trains operate between Inwood-207 St, Manhattan and Far Rockaway-Mott Avenue, Queens at all times.
      * Also from about 6AM until about midnight,
-     * additional A trains operate between Inwood-207 St and Lefferts Boulevard (trains typically alternate between Lefferts Blvd and Far Rockaway)."
+     * additional A trains operate between Inwood-207 St and Lefferts Boulevard (trains typically alternate between Lefferts Blvd and Far Rockaway).".
      *
      * @var string
      * @JMS\Type("string")
